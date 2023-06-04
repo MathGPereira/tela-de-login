@@ -1,16 +1,26 @@
 <main class="principal" role="main">
-    <form action="" method="POST" name="login" id="formulario-login" autocomplete="on" enctype="application/x-www-form-urlencoded">
+    <form action="" method="POST" name="login" id="formulario-login" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm">
         <fieldset class="login" form="formulario-login">
             <legend>Login</legend>
             <div class="email">
                 <label for="email" form="formulario-login" id="label-email">E-mail</label>
-                <input type="email" name="email" id="email" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" tabindex="1" aria-labelledby="label-email">
+                <input type="email" name="email" id="email" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w\-.]+@([\w\-]+\.)+[\w\-]{2,4}$" tabindex="1" aria-labelledby="label-email" ngModel>
+                <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
+                    <span *ngIf="f.controls['email']?.errors?.['required']">Preencha este campo</span>
+                    <span *ngIf="f.controls['email']?.errors?.['minlength']">E-mail deve conter mais de 7 caracteres</span>
+                    <span *ngIf="f.controls['email']?.errors?.['pattern']">E-mail deve ter o formato seuemail@dominio.com</span>
+                </div>
             </div>
             <div class="senha">
                 <label for="senha" form="formulario-login" id="label-senha">Senha</label>
-                <input type="password" name="senha" id="senha" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="2" aria-labelledby="label-senha">
+                <input type="password" name="senha" id="senha" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="2" aria-labelledby="label-senha" ngModel>
                 <span class="icone senha__olho-aberto"></span>
                 <span class="icone senha__olho-fechado"></span>
+                <div *ngIf="(f.controls['senha']?.valid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
+                    <span *ngIf="f.controls['senha']?.errors?.['required']">Preencha este campo</span>
+                    <span *ngIf="f.controls['senha']?.errors?.['minlength']">Sua senha deve ter mais de 7 caracteres</span>
+                    <span *ngIf="f.controls['senha']?.errors?.['pattern']">Insira letras maiúsculas, minúsculas, números e caracteres especiais</span>
+                </div>
             </div>
         </fieldset>
         <fieldset class="botoes" form="formulario-login">

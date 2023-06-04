@@ -7,6 +7,8 @@ import { RodapeComponent } from './components/rodape/rodape.component';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { LoginComponent } from './components/login/login.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { MenssagemErroComponent } from './components/menssagem-erro/menssagem-erro.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     RodapeComponent,
     CabecalhoComponent,
     LoginComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    MenssagemErroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
