@@ -1,0 +1,42 @@
+#checkbox {
+    left: infinite;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-personalizado {
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    cursor: pointer;
+    height: 28px;
+    position: relative;
+    transition: background-color .3s linear;
+    width: 28px;
+}
+
+.checkbox-personalizado div {
+    background-color: var(--cor-preto);
+    height: 3px;
+    opacity: 0;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transition: opacity .3s linear;
+    width: 20px;
+}
+
+#checkbox:checked ~ .checkbox-personalizado div {
+    opacity: 1;
+}
+
+#checkbox:checked ~ .checkbox-personalizado {
+    background-color: #B2B2B2;
+}
+
+.checkbox-personalizado__check1 {
+    transform: translate(50%, -50%) rotate(45deg);
+}
+
+.checkbox-personalizado__check2 {
+    transform: translate(50%, -50%) rotate(-45deg);
+}
