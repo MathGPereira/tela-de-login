@@ -9,6 +9,8 @@
 
 form {
     background-color: var(--cor-principal);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px var(--cor-principal);
     padding: 2rem;
     width: 50%;
 }
@@ -21,6 +23,7 @@ form {
 
 .login label {
     display: block;
+    margin-bottom: .5rem;
 }
 
 .login input {
@@ -30,7 +33,7 @@ form {
     box-sizing: border-box;
     color: var(--cor-secundaria);
     font-size: calc(var(--tamanho-fonte) * 1.2);
-    margin: .5rem 0 1rem;
+    margin: 0 0 1rem;
     outline: none;
     padding: 1.1rem;
     width: 100%;
