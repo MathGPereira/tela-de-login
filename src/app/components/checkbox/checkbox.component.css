@@ -1,3 +1,9 @@
+label {
+    align-items: center;
+    column-gap: 1rem;
+    display: flex;
+}
+
 #checkbox {
     left: infinite;
     opacity: 0;
@@ -39,4 +45,9 @@
 
 .checkbox-personalizado__check2 {
     transform: translate(50%, -50%) rotate(-45deg);
+}
+
+span {
+    font-size: 18px;
+    font-weight: 500;
 }
