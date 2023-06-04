@@ -5,7 +5,31 @@ import sys
 import ast
 
 
-@app.route("/", methods=["POST"])
+@app.route("/api", methods=["POST"])
+def verifica_email_cadastrado():
+    email = request.data.decode(sys.getdefaultencoding())
+
+    with app.app_context():
+        if Usuario.query.filter_by(email=email).first():
+            return "{'status': True}"
+
+    return "{'status': False}"
+
+
+@app.route("/api/validaLogin", methods=["POST"])
+def valida_login():
+    info_login = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
+
+    with app.app_context():
+        usuario = Usuario.query.filter_by(email=info_login["email"]).first()
+
+        if bcrypt.check_password_hash(usuario.senha, info_login["senha"]):
+            return "{'status': True}"
+
+    return "{'status': False}"
+
+
+@app.route("/api/cadastrar", methods=["POST"])
 def cadastra_usuario():
     info_usuario = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
     usuario = Usuario(
@@ -19,4 +43,16 @@ def cadastra_usuario():
         database.session.add(usuario)
         database.session.commit()
 
-    return ""
+    return {}
+
+
+@app.route("/api/trocar-senha", methods=["POST"])
+def trocar_senha():
+    info_troca_senha = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
+
+    with app.app_context():
+        usuario = Usuario.query.filter_by(email=info_troca_senha["email"]).first()
+
+        usuario.senha = bcrypt.generate_password_hash(info_troca_senha["senha"])
+
+    return {}
