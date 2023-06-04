@@ -9,13 +9,16 @@
             <div class="senha">
                 <label for="senha" form="formulario-login" id="label-senha">Senha</label>
                 <input type="password" name="senha" id="senha" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="2" aria-labelledby="label-senha">
+                <span class="icone senha__olho-aberto"></span>
+                <span class="icone senha__olho-fechado"></span>
             </div>
         </fieldset>
         <fieldset class="botoes" form="formulario-login">
             <label for="checkbox" form="formulario-login">
-                <input type="checkbox" name="checkbox" id="checkbox" form="formulario-login" tabindex="3" aria-labelledby="label-checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" form="formulario-login" tabindex="3" aria-labelledby="label-checkbox" checked>
                 <p id="label-checkbox">Gostaria de ser lembrado?</p>
             </label>
+            <button type="submit" form="formulario-login" name="logar" tabindex="4">Logar</button>
         </fieldset>
     </form>
 </main>

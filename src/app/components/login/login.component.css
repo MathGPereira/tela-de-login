@@ -16,13 +16,18 @@ form {
 }
 
 .login legend {
+    color: var(--cor-secundaria);
     font-size: calc(var(--tamanho-fonte) * 2.5);
     font-weight: 500;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
 .login label {
+    color: var(--cor-secundaria);
     display: block;
+    font-size: calc(var(--tamanho-fonte) * 1.2);
+    font-weight: 500;
     margin-bottom: .5rem;
 }
 
@@ -33,7 +38,7 @@ form {
     box-sizing: border-box;
     color: var(--cor-secundaria);
     font-size: calc(var(--tamanho-fonte) * 1.2);
-    margin: 0 0 1rem;
+    margin: 0 0 1.2rem;
     outline: none;
     padding: 1.1rem;
     width: 100%;
@@ -44,7 +49,54 @@ form {
     font-weight: 500;
 }
 
-.login input:hover {
+.login input:hover,
+.login input:focus,
+.icone:hover input {
     outline: solid var(--cor-secundaria) 2px;
+    transform: scale(1.02);
+}
+
+.senha {
+    position: relative;
+}
+
+.icone {
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    position: absolute;
+    right: 5%;
+    top: 47%;
+    width: 16px;
+}
+
+.senha__olho-aberto {
+    background-image: url("../../../assets/img/icones/olho-aberto.png");
+}
+
+.senha__olho-fechado {
+    background-image: url("../../../assets/img/icones/olho-fechado.png");
+}
+
+button {
+    background-color: var(--cor-terciaria);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px var(--cor-terciaria);
+    box-sizing: border-box;
+    color: var(--cor-branco);
+    cursor: pointer;
+    font-size: calc(var(--tamanho-fonte) * 1.6);
+    font-weight: 700;
+    margin-top: 1rem;
+    outline: none;
+    padding: .5rem 1rem;
+    transition: all .4s ease-in-out;
+    width: 50%;
+}
+
+button:hover,
+button:focus {
+    background-color: #71b820;
     transform: scale(1.02);
 }
