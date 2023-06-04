@@ -1,4 +1,4 @@
-from API import app
+from API import app, database
 
 
 @app.route("/")
