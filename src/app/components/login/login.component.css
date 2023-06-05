@@ -23,6 +23,20 @@ form {
     text-align: center;
 }
 
+#erro-login {
+    background-color: var(--cor-fundo-erro);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--cor-erro);
+    display: block;
+    font-size: calc(var(--tamanho-fonte) * 2);
+    font-weight: 500;
+    margin: .5rem 0 1rem;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+}
+
 .login label {
     color: var(--cor-secundaria);
     display: block;
@@ -66,6 +80,10 @@ form {
 
 .erros {
     margin-bottom: 1.2rem;
+}
+
+.botoes {
+    padding-top: 1rem;
 }
 
 button {

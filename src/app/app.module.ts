@@ -11,6 +11,7 @@ import { MenssagemErroComponent } from './components/menssagem-erro/menssagem-er
 import { FormsModule } from '@angular/forms';
 import { ValidaLoginDirective } from './diretivas/formulario-login/valida-login.directive';
 import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-cadastro.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

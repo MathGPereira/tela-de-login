@@ -1,5 +1,5 @@
 span {
-    color: #d81616;
+    color: var(--cor-erro);
     display: block;
     font-size: calc(var(--tamanho-fonte) / 1.15);
 }
