@@ -1,8 +1,9 @@
 .principal {
     align-items: center;
-    background: url("../../../assets/img/perspectiva-exterior-ninguem-caixa-vazia.jpg") no-repeat center center / cover;
+    background: url("../../../../assets/img/perspectiva-exterior-ninguem-caixa-vazia.jpg") no-repeat center center / cover;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     height: 100vh;
     justify-content: center;
 }
@@ -107,4 +108,18 @@ button:hover,
 button:focus {
     background-color: #71b820;
     transform: scale(1.02);
+}
+
+nav {
+    width: 50%;
+}
+
+ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+li button {
+    width: auto;
 }
