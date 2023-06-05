@@ -34,6 +34,9 @@ export class LoginComponent {
                 if(!JSON.parse(JSON.stringify(resposta)).status) {
                     this.erro.mensagem = "E-mail ou senha inválidos";
                     this.erro.status = true;
+
+                    email.value = "";
+                    senha.value = "";
                 }else {
                     this.route.navigate(["home"]);
                 }
