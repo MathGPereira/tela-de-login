@@ -31,6 +31,10 @@ form {
     margin-bottom: .5rem;
 }
 
+.login label[id="label-senha"] {
+    margin-top: .9rem;
+}
+
 .login input {
     border: none;
     border-radius: 8px;
@@ -38,7 +42,7 @@ form {
     box-sizing: border-box;
     color: var(--cor-secundaria);
     font-size: calc(var(--tamanho-fonte) * 1.2);
-    margin: 0 0 1.2rem;
+    margin: 0 0 .3rem;
     outline: none;
     padding: 1.1rem;
     width: 100%;
@@ -60,22 +64,8 @@ form {
     position: relative;
 }
 
-.icone {
-    cursor: pointer;
-    display: inline-block;
-    height: 16px;
-    position: absolute;
-    right: 5%;
-    top: 47%;
-    width: 16px;
-}
-
-.senha__olho-aberto {
-    background-image: url("../../../assets/img/icones/olho-aberto.png");
-}
-
-.senha__olho-fechado {
-    background-image: url("../../../assets/img/icones/olho-fechado.png");
+.erros {
+    margin-bottom: 1.2rem;
 }
 
 button {
