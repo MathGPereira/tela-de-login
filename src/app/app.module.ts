@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { MenssagemErroComponent } from './components/menssagem-erro/menssagem-erro.component';
 import { FormsModule } from '@angular/forms';
+import { ValidaLoginDirective } from './diretivas/formulario-login/valida-login.directive';
+import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-cadastro.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     CabecalhoComponent,
     LoginComponent,
     CheckboxComponent,
-    MenssagemErroComponent
+    MenssagemErroComponent,
+    ValidaLoginDirective,
+    ValidaCadastroDirective
   ],
   imports: [
     BrowserModule,
