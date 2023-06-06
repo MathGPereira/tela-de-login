@@ -21,3 +21,132 @@ body {
     height: 100vh;
     width: 100vw;
 }
+
+.principal {
+    align-items: center;
+    background: url("./assets/img/perspectiva-exterior-ninguem-caixa-vazia.jpg") no-repeat center center / cover;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+form {
+    background-color: var(--cor-principal);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 10px var(--cor-principal);
+    padding: 2rem;
+    width: 50%;
+}
+
+.login legend, .cadastrar legend {
+    color: var(--cor-secundaria);
+    font-size: calc(var(--tamanho-fonte) * 2.5);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#erro-login, #erro-cadastrar {
+    background-color: var(--cor-fundo-erro);
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: var(--cor-erro);
+    display: block;
+    font-size: calc(var(--tamanho-fonte) * 2);
+    font-weight: 500;
+    margin: .5rem 0 1rem;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+}
+
+.login label, .cadastrar label {
+    color: var(--cor-secundaria);
+    display: block;
+    font-size: calc(var(--tamanho-fonte) * 1.2);
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+
+.login label[id="label-senha"], .cadastrar label[id="label-confirmaSenha"] {
+    margin-top: .9rem;
+}
+
+.login input, .cadastrar input {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #00000077;
+    box-sizing: border-box;
+    color: var(--cor-secundaria);
+    font-size: calc(var(--tamanho-fonte) * 1.2);
+    margin: 0 0 .3rem;
+    outline: none;
+    padding: 1.1rem;
+    width: 100%;
+}
+
+.login input::placeholder, .cadastrar input::placeholder {
+    color: var(--cor-secundaria);
+    font-weight: 500;
+}
+
+.login input:hover,
+.login input:focus,
+.icone:hover input,
+.cadastrar input:hover,
+.cadastrar input:focus {
+    outline: solid var(--cor-secundaria) 2px;
+    transform: scale(1.02);
+}
+
+.senha, .confirmaSenha {
+    position: relative;
+}
+
+.erros {
+    margin-bottom: 1.2rem;
+}
+
+.botoes {
+    padding-top: 1rem;
+}
+
+button {
+    background-color: var(--cor-terciaria);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px var(--cor-terciaria);
+    box-sizing: border-box;
+    color: var(--cor-branco);
+    cursor: pointer;
+    font-size: calc(var(--tamanho-fonte) * 1.6);
+    font-weight: 700;
+    margin-top: 1rem;
+    outline: none;
+    padding: .5rem 1rem;
+    transition: all .4s ease-in-out;
+    width: 50%;
+}
+
+button:hover,
+button:focus {
+    background-color: #71b820;
+    transform: scale(1.02);
+}
+
+nav {
+    width: 50%;
+}
+
+ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+li button {
+    width: auto;
+}
+

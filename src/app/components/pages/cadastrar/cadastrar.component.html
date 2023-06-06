@@ -1,1 +1,65 @@
-<p>cadastrar works!</p>
+<main class="principal" role="main">
+    <form action="" method="POST" name="cadastrar" id="formulario-cadastrar" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm" (ngSubmit)="validaCadastrar(f)">
+        <fieldset class="cadastrar" form="formulario-cadastrar">
+            <legend>Cadastrar</legend>
+            <span id="erro-cadastrar"></span>
+            <div class="nome">
+                <label for="nome" form="formulario-cadastrar" id="label-nome">Nome</label>
+                <input type="nome" name="nome" id="nome" form="formulario-cadastrar" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: José" required minlength="3" tabindex="1" aria-labelledby="label-nome" ngModel data-nome>
+                <div class="erros" *ngIf="(f.controls['nome']?.invalid && f.controls['nome']?.touched) || f.controls['nome']?.dirty">
+                    <app-menssagem-erro *ngIf="f.controls['nome']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['nome']?.errors?.['minlength']" mensagem="Nome deve conter 3 ou mais caracteres"></app-menssagem-erro>
+                </div>
+            </div>
+            <div class="sobrenome">
+                <label for="sobrenome" form="formulario-cadastrar" id="label-sobrenome">Sobrenome</label>
+                <input type="sobrenome" name="sobrenome" id="sobrenome" form="formulario-cadastrar" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: Silva" required minlength="2" tabindex="2" aria-labelledby="label-sobrenome" ngModel data-sobrenome>
+                <div class="erros" *ngIf="(f.controls['sobrenome']?.invalid && f.controls['sobrenome']?.touched) || f.controls['sobrenome']?.dirty">
+                    <app-menssagem-erro *ngIf="f.controls['sobrenome']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['sobrenome']?.errors?.['minlength']" mensagem="sobrenome deve conter 2 ou mais caracteres"></app-menssagem-erro>
+                </div>
+            </div>
+            <div class="email">
+                <label for="email" form="formulario-cadastrar" id="label-email">E-mail</label>
+                <input type="email" name="email" id="email" form="formulario-cadastrar" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w\-.]+@([\w\-]+\.)+[\w\-]{2,4}$" tabindex="3" aria-labelledby="label-email" ngModel data-email>
+                <div class="erros" *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
+                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['minlength']" mensagem="E-mail deve conter 8 ou mais caracteres"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="E-mail deve ter o formato seuemail@dominio.com"></app-menssagem-erro>
+                </div>
+            </div>
+            <div class="senha">
+                <label for="senha" form="formulario-cadastrar" id="label-senha">Senha</label>
+                <input type="password" name="senha" id="senha" form="formulario-cadastrar" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="4" aria-labelledby="label-senha" ngModel data-senha>
+                <div class="erros" *ngIf="(f.controls['senha']?.invalid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
+                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['minlength']" mensagem="Sua senha deve conter 8 ou mais caracteres"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['pattern']" mensagem="Insira: letras maiúsculas, minúsculas, números e caracteres especiais"></app-menssagem-erro>
+                </div>
+            </div>
+            <div class="confirmaSenha">
+                <label for="confirmaSenha" form="formulario-cadastrar" id="label-confirmaSenha">Confirmar senha</label>
+                <input type="password" name="confirmaSenha" id="confirmaSenha" form="formulario-cadastrar" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="5" aria-labelledby="label-confirmaSenha" ngModel data-confirmaSenha>
+                <div class="erros" *ngIf="(f.controls['confirmaSenha']?.invalid && f.controls['confirmaSenha']?.touched) || f.controls['confirmaSenha']?.dirty">
+                    <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['minlength']" mensagem="Sua confirmaSenha deve conter 8 ou mais caracteres"></app-menssagem-erro>
+                    <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['pattern']" mensagem="Insira: letras maiúsculas, minúsculas, números e caracteres especiais"></app-menssagem-erro>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="botoes" form="formulario-cadastrar">
+            <app-checkbox></app-checkbox>
+            <button type="submit" form="formulario-cadastrar" name="logar" tabindex="4">Logar</button>
+        </fieldset>
+    </form>
+    <nav>
+        <ul>
+            <li>
+                <button type="button" name="cadastrar" tabindex="6" routerLink="/home">Voltar</button>
+            </li>
+            <li>
+                <button type="button" name="trocar-senha" tabindex="7" routerLink="/trocarSenha">Trocar senha</button>
+            </li>
+        </ul>
+    </nav>
+</main>
