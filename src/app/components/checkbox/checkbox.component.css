@@ -8,6 +8,7 @@ label {
     left: infinite;
     opacity: 0;
     position: absolute;
+    width: 0;
 }
 
 .checkbox-personalizado {

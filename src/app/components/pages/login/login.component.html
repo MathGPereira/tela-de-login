@@ -1,40 +1,38 @@
-<main class="principal" role="main">
-    <form action="" method="POST" name="login" id="formulario-login" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm" (ngSubmit)="validaLogin(f)">
-        <fieldset class="login" form="formulario-login">
-            <legend>Login</legend>
-            <span id="erro-login" *ngIf="erro.status">{{ erro.mensagem }}</span>
-            <div class="email">
-                <label for="email" form="formulario-login" id="label-email">E-mail</label>
-                <input type="email" name="email" id="email" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w\-.]+@([\w\-]+\.)+[\w\-]{2,4}$" tabindex="1" aria-labelledby="label-email" ngModel data-email>
-                <div class="erros" *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
-                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
-                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['minlength']" mensagem="E-mail deve conter 8 ou mais caracteres"></app-menssagem-erro>
-                    <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="E-mail deve ter o formato seuemail@dominio.com"></app-menssagem-erro>
-                </div>
+<form action="" method="POST" name="login" id="formulario" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm" (ngSubmit)="validaLogin(f)">
+    <fieldset form="formulario">
+        <legend>Login</legend>
+        <span id="erro" *ngIf="erro.status">{{ erro.mensagem }}</span>
+        <div class="email">
+            <label for="email" form="formulario" id="label-email">E-mail</label>
+            <input type="email" name="email" id="email" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w\-.]+@([\w\-]+\.)+[\w\-]{2,4}$" tabindex="1" aria-labelledby="label-email" ngModel data-email>
+            <div class="erros" *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
+                <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['minlength']" mensagem="E-mail deve conter 8 ou mais caracteres"></app-menssagem-erro>
+                <app-menssagem-erro *ngIf="f.controls['email']?.errors?.['pattern']" mensagem="E-mail deve ter o formato seuemail@dominio.com"></app-menssagem-erro>
             </div>
-            <div class="senha">
-                <label for="senha" form="formulario-login" id="label-senha">Senha</label>
-                <input type="password" name="senha" id="senha" form="formulario-login" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="2" aria-labelledby="label-senha" ngModel data-senha>
-                <div class="erros" *ngIf="(f.controls['senha']?.invalid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
-                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
-                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['minlength']" mensagem="Sua senha deve conter 8 ou mais caracteres"></app-menssagem-erro>
-                    <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['pattern']" mensagem="Insira: letras maiúsculas, minúsculas, números e caracteres especiais"></app-menssagem-erro>
-                </div>
+        </div>
+        <div class="senha">
+            <label for="senha" form="formulario" id="label-senha">Senha</label>
+            <input type="password" name="senha" id="senha" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="2" aria-labelledby="label-senha" ngModel data-senha>
+            <div class="erros" *ngIf="(f.controls['senha']?.invalid && f.controls['senha']?.touched) || f.controls['senha']?.dirty">
+                <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
+                <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['minlength']" mensagem="Sua senha deve conter 8 ou mais caracteres"></app-menssagem-erro>
+                <app-menssagem-erro *ngIf="f.controls['senha']?.errors?.['pattern']" mensagem="Insira: letras maiúsculas, minúsculas, números e caracteres especiais"></app-menssagem-erro>
             </div>
-        </fieldset>
-        <fieldset class="botoes" form="formulario-login">
-            <app-checkbox></app-checkbox>
-            <button type="submit" form="formulario-login" name="logar" tabindex="4">Logar</button>
-        </fieldset>
-    </form>
-    <nav>
-        <ul>
-            <li>
-                <button type="button" name="cadastrar" tabindex="5" routerLink="/cadastrar">Cadastrar</button>
-            </li>
-            <li>
-                <button type="button" name="trocar-senha" tabindex="6" routerLink="/trocarSenha">Trocar senha</button>
-            </li>
-        </ul>
-    </nav>
-</main>
+        </div>
+    </fieldset>
+    <fieldset class="botoes" form="formulario">
+        <app-checkbox></app-checkbox>
+        <button type="submit" form="formulario" name="logar" tabindex="4">Logar</button>
+    </fieldset>
+</form>
+<nav>
+    <ul>
+        <li>
+            <button type="button" name="cadastrar" tabindex="5" routerLink="/cadastrar">Cadastrar</button>
+        </li>
+        <li>
+            <button type="button" name="trocar-senha" tabindex="6" routerLink="/trocarSenha">Trocar senha</button>
+        </li>
+    </ul>
+</nav>
