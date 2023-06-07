@@ -40,10 +40,14 @@ def cadastra_usuario():
     )
 
     with app.app_context():
-        database.session.add(usuario)
-        database.session.commit()
+        try:
+            usuario.query.filter_by(email=usuario.email).first()
+            return {'status': False}
+        except:
+            database.session.add(usuario)
+            database.session.commit()
 
-    return {}
+    return {'status': True}
 
 
 @app.route("/api/trocar-senha", methods=["POST"])
