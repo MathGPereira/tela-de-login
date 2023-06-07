@@ -13,6 +13,7 @@ export class CheckboxComponent {
 
     acionaCheck(): void {
         const checkbox = <HTMLInputElement>document.querySelector("[data-check]");
-        checkbox.checked = !checkbox.value;
+
+        checkbox.checked = !checkbox.checked
     }
 }
