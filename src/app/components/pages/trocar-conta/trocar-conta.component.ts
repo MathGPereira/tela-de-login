@@ -25,6 +25,7 @@ export class TrocarContaComponent {
         if(form.valid) {
             const email = <HTMLInputElement>document.querySelector("[data-email]");
             const novaSenha = <HTMLInputElement>document.querySelector("[data-senha]");
+            const confirmaNovaSenha = <HTMLInputElement>document.querySelector("[data-confirmaSenha]");
             const infoTrocaSenha: Login = {
                 email: btoa(email.value),
                 senha: btoa(novaSenha.value)
@@ -37,6 +38,7 @@ export class TrocarContaComponent {
 
                     email.value = "";
                     novaSenha.value = "";
+                    confirmaNovaSenha.value = "";
                 }else {
                     this.route.navigate(["home"]);
                 }

@@ -32,7 +32,6 @@ def valida_login():
 @app.route("/api/cadastrar", methods=["POST"])
 def cadastra_usuario():
     # with app.app_context():
-    #     database.drop_all()
     #     database.create_all()
 
     info_usuario = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
@@ -44,10 +43,9 @@ def cadastra_usuario():
     )
 
     with app.app_context():
-        try:
-            usuario.query.filter_by(email=usuario.email).first()
+        if usuario.query.filter_by(email=usuario.email).first():
             return {'status': False}
-        except:
+        else:
             database.session.add(usuario)
             database.session.commit()
 

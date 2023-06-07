@@ -28,6 +28,7 @@ export class CadastrarComponent {
             const sobrenome = <HTMLInputElement>document.querySelector("[data-sobrenome]");
             const email = <HTMLInputElement>document.querySelector("[data-email]");
             const senha = <HTMLInputElement>document.querySelector("[data-senha]");
+            const confirmaSenha = <HTMLInputElement>document.querySelector("[data-confirmaSenha]");
             const infoCadastro: Cadastro = {
                 nome: btoa(nome.value),
                 sobrenome: btoa(sobrenome.value),
@@ -44,6 +45,7 @@ export class CadastrarComponent {
                     sobrenome.value = "";
                     email.value = "";
                     senha.value = "";
+                    confirmaSenha.value = "";
                 }else {
                     this.route.navigate(["home"]);
                 }
