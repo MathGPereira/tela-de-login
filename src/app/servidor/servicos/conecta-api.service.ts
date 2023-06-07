@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Login } from 'src/app/interface/login';
+import { Cadastro } from 'src/app/interface/cadastro';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,10 @@ export class ConectaApiService {
 
     validaLogin(infoLogin: Login): Observable<object> {
         return this.http.post<object>(`${this.urlAPI}/validaLogin`, infoLogin);
+    }
+
+    cadastraUsuario(infoCadastro: Cadastro): Observable<object> {
+        return this.http.post<object>(`${this.urlAPI}/cadastrar`, infoCadastro);
     }
 
 }

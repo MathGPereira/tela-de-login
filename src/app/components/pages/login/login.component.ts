@@ -3,6 +3,7 @@ import { ConectaApiService } from 'src/app/servidor/servicos/conecta-api.service
 import { NgForm } from '@angular/forms';
 import { Login } from 'src/app/interface/login';
 import { Router } from '@angular/router';
+import { Erro } from 'src/app/interface/erro';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-    erro: {status: boolean, mensagem: string} = {
+    erro: Erro = {
         status: false,
         mensagem: ""
     }
@@ -26,8 +27,8 @@ export class LoginComponent {
             const email = <HTMLInputElement>document.querySelector("[data-email]");
             const senha = <HTMLInputElement>document.querySelector("[data-senha]");
             const infoLogin: Login = {
-                email: email.value,
-                senha: senha.value
+                email: btoa(email.value),
+                senha: btoa(senha.value)
             }
 
             this.service.validaLogin(infoLogin).subscribe(resposta => {
