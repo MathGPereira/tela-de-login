@@ -31,12 +31,16 @@ def valida_login():
 
 @app.route("/api/cadastrar", methods=["POST"])
 def cadastra_usuario():
+    # with app.app_context():
+    #     database.drop_all()
+    #     database.create_all()
+
     info_usuario = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
     usuario = Usuario(
-        nome=info_usuario.nome,
-        sobrenome=info_usuario.sobrenome,
-        email=info_usuario.email,
-        senha=bcrypt.generate_password_hash(info_usuario.senha)
+        nome=info_usuario["nome"],
+        sobrenome=info_usuario["sobrenome"],
+        email=info_usuario["email"],
+        senha=bcrypt.generate_password_hash(info_usuario["senha"])
     )
 
     with app.app_context():

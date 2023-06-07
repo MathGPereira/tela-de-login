@@ -1,7 +1,7 @@
 <form action="" method="POST" name="cadastrar" id="formulario" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm" (ngSubmit)="validaCadastro(f)">
     <fieldset form="formulario">
         <legend>Cadastrar</legend>
-        <!-- <span id="erro"></span> -->
+        <span id="erro" *ngIf="erro.status">{{ erro.mensagem }}</span>
         <div class="nome">
             <label for="nome" form="formulario" id="label-nome">Nome</label>
             <input type="nome" name="nome" id="nome" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: José" required minlength="3" tabindex="1" aria-labelledby="label-nome" ngModel data-nome>

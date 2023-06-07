@@ -16,7 +16,7 @@ export class ValidaMesmaSenhaDirective implements Validator {
     validate(control: AbstractControl<any, any>): ValidationErrors | null {
         const confirmaSenha = control.value;
         const senha = <HTMLInputElement>document.querySelector("[data-senha]");
-        const ehIgual = confirmaSenha === senha;
+        const ehIgual = confirmaSenha === senha.value;
 
         return ehIgual ? null : {"appValidaMesmaSenha": true};
     }
