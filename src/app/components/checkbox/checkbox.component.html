@@ -1,6 +1,6 @@
 <label for="checkbox" form="formulario-login">
-    <input type="checkbox" name="checkbox" id="checkbox" form="formulario-login" tabindex="3" aria-labelledby="label-checkbox" checked>
-    <div class="checkbox-personalizado" role="checkbox">
+    <input type="checkbox" name="checkbox" id="checkbox" form="formulario-login" aria-labelledby="label-checkbox" checked data-check>
+    <div class="checkbox-personalizado" role="checkbox" (keyup.space)="acionaCheck()">
         <div class="checkbox-personalizado__check1"></div>
         <div class="checkbox-personalizado__check2"></div>
     </div>

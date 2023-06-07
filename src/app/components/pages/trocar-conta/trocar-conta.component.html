@@ -22,7 +22,7 @@
         </div>
         <div class="confirmaSenha">
             <label for="confirmaSenha" form="formulario" id="label-confirmaSenha">Confirmar senha</label>
-            <input type="password" name="confirmaSenha" id="confirmaSenha" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="5" aria-labelledby="label-confirmaSenha" ngModel appValidaMesmaSenha data-confirmaSenha>
+            <input type="password" name="confirmaSenha" id="confirmaSenha" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="3" aria-labelledby="label-confirmaSenha" ngModel appValidaMesmaSenha data-confirmaSenha>
             <div class="erros" *ngIf="(f.controls['confirmaSenha']?.invalid && f.controls['confirmaSenha']?.touched) || f.controls['confirmaSenha']?.dirty">
                 <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
                 <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['minlength']" mensagem="Sua confirmaSenha deve conter 8 ou mais caracteres"></app-menssagem-erro>
@@ -32,17 +32,17 @@
         </div>
     </fieldset>
     <fieldset class="botoes" form="formulario">
-        <app-checkbox></app-checkbox>
-        <button type="submit" form="formulario" name="logar" tabindex="4">Logar</button>
+        <app-checkbox tabindex="4"></app-checkbox>
+        <button type="submit" form="formulario" name="logar" tabindex="5">Logar</button>
     </fieldset>
 </form>
 <nav>
     <ul>
         <li>
-            <button type="button" name="cadastrar" tabindex="5" routerLink="/cadastrar">Cadastrar</button>
+            <button type="button" name="cadastrar" tabindex="6" routerLink="/cadastrar">Cadastrar</button>
         </li>
         <li>
-            <button type="button" name="trocar-senha" tabindex="6" routerLink="/home">Login</button>
+            <button type="button" name="trocar-senha" tabindex="7" routerLink="/home">Login</button>
         </li>
     </ul>
 </nav>

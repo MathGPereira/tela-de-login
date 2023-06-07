@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class CheckboxComponent {
 
+    constructor() {}
+
+    @Input() tabindex!: string;
+
+    acionaCheck(): void {
+        const checkbox = <HTMLInputElement>document.querySelector("[data-check]");
+        checkbox.checked = !checkbox.value;
+    }
 }
