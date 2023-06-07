@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-cadastro.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.component';
+import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-conta.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.compo
     CheckboxComponent,
     MenssagemErroComponent,
     ValidaCadastroDirective,
-    CadastrarComponent
+    CadastrarComponent,
+    TrocarContaComponent
   ],
   imports: [
     BrowserModule,
