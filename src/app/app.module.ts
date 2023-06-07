@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.component';
 import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-conta.component';
 import { ValidaMesmaSenhaDirective } from './diretivas/valida-senha/valida-mesma-senha.directive';
+import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ValidaMesmaSenhaDirective } from './diretivas/valida-senha/valida-mesma
     ValidaCadastroDirective,
     CadastrarComponent,
     TrocarContaComponent,
-    ValidaMesmaSenhaDirective
+    ValidaMesmaSenhaDirective,
+    PaginaInicialComponent
   ],
   imports: [
     BrowserModule,

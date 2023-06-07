@@ -39,7 +39,7 @@ export class LoginComponent {
                     email.value = "";
                     senha.value = "";
                 }else {
-                    this.route.navigate(["home"]);
+                    this.route.navigate(["paginaInicial"]);
                 }
             });
         }

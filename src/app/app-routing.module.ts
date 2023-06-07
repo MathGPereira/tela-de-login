@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/pages/login/login.component';
 import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.component';
 import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-conta.component';
+import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
 
 const routes: Routes = [
     {
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: "trocarSenha",
         component: TrocarContaComponent
+    },
+    {
+        path: "paginaInicial",
+        component: PaginaInicialComponent
     },
     {
         path: "**",
