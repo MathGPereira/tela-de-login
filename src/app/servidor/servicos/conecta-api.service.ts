@@ -18,7 +18,11 @@ export class ConectaApiService {
     }
 
     cadastraUsuario(infoCadastro: Cadastro): Observable<object> {
-        return this.http.post<object>(`${this.urlAPI}/cadastrar`, infoCadastro);
+        return this.http.post<Cadastro>(`${this.urlAPI}/cadastrar`, infoCadastro);
+    }
+
+    trocaSenhaUsuario(infoTrocaSenha: Login): Observable<object> {
+        return this.http.post<Login>(`${this.urlAPI}/trocar-senha`, infoTrocaSenha);
     }
 
 }

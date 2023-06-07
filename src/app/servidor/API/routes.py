@@ -59,8 +59,10 @@ def trocar_senha():
     info_troca_senha = ast.literal_eval(request.data.decode(sys.getdefaultencoding()))
 
     with app.app_context():
-        usuario = Usuario.query.filter_by(email=info_troca_senha["email"]).first()
+        try:
+            usuario = Usuario.query.filter_by(email=info_troca_senha["email"]).first()
 
-        usuario.senha = bcrypt.generate_password_hash(info_troca_senha["senha"])
-
-    return {}
+            usuario.senha = bcrypt.generate_password_hash(info_troca_senha["senha"])
+            return {'status': True}
+        except:
+            return {'status': False}

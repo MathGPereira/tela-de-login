@@ -1,7 +1,7 @@
-<form action="" method="POST" name="login" id="formulario" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm">
+<form action="" method="POST" name="login" id="formulario" autocomplete="on" enctype="application/x-www-form-urlencoded" #f="ngForm" (ngSubnmit)="trocaSenha(f)">
     <fieldset form="formulario">
         <legend>Trocar Senha</legend>
-        <!-- <span id="erro"></span> -->
+        <span id="erro" *ngIf="erro.status"> {{ erro.mensagem }}</span>
         <div class="email">
             <label for="email" form="formulario" id="label-email">E-mail</label>
             <input type="email" name="email" id="email" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: email@dominio.com" required minlength="8" pattern="^[\w\-.]+@([\w\-]+\.)+[\w\-]{2,4}$" tabindex="1" aria-labelledby="label-email" ngModel data-email>
