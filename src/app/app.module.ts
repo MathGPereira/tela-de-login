@@ -13,6 +13,7 @@ import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.component';
 import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-conta.component';
+import { ValidaMesmaSenhaDirective } from './diretivas/valida-senha/valida-mesma-senha.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-con
     MenssagemErroComponent,
     ValidaCadastroDirective,
     CadastrarComponent,
-    TrocarContaComponent
+    TrocarContaComponent,
+    ValidaMesmaSenhaDirective
   ],
   imports: [
     BrowserModule,

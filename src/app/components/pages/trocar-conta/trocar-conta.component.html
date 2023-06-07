@@ -22,11 +22,12 @@
         </div>
         <div class="confirmaSenha">
             <label for="confirmaSenha" form="formulario" id="label-confirmaSenha">Confirmar senha</label>
-            <input type="password" name="confirmaSenha" id="confirmaSenha" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="5" aria-labelledby="label-confirmaSenha" ngModel data-confirmaSenha>
+            <input type="password" name="confirmaSenha" id="confirmaSenha" form="formulario" autocapitalize="none" autocorrect="off" inputmode="verbatim" spellcheck="false" placeholder="Ex.: ********" required minlength="8" maxlength="20" pattern="^(?=.*[A-Z])(?=.*[!#@$%&])(?=.*[0-9])(?=.*[a-z]).{8,20}$" tabindex="5" aria-labelledby="label-confirmaSenha" ngModel appValidaMesmaSenha data-confirmaSenha>
             <div class="erros" *ngIf="(f.controls['confirmaSenha']?.invalid && f.controls['confirmaSenha']?.touched) || f.controls['confirmaSenha']?.dirty">
                 <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['required']" mensagem="Preencha este campo"></app-menssagem-erro>
                 <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['minlength']" mensagem="Sua confirmaSenha deve conter 8 ou mais caracteres"></app-menssagem-erro>
                 <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['pattern']" mensagem="Insira: letras maiúsculas, minúsculas, números e caracteres especiais"></app-menssagem-erro>
+                <app-menssagem-erro *ngIf="f.controls['confirmaSenha']?.errors?.['appValidaMesmaSenha']" mensagem="As senhas não são coincidentes"></app-menssagem-erro>
             </div>
         </div>
     </fieldset>

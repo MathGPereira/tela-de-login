@@ -15,9 +15,12 @@ label {
     background-color: var(--cor-branco);
     border-radius: 8px;
     cursor: pointer;
+    display: inline-block;
     height: 28px;
+    margin-right: 1rem;
     position: relative;
     transition: background-color .3s linear;
+    vertical-align: middle;
     width: 28px;
 }
 
