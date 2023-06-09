@@ -13,8 +13,8 @@ import { ValidaCadastroDirective } from './diretivas/formulario-cadastro/valida-
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarComponent } from './components/pages/cadastrar/cadastrar.component';
 import { TrocarContaComponent } from './components/pages/trocar-conta/trocar-conta.component';
-import { ValidaMesmaSenhaDirective } from './diretivas/valida-senha/valida-mesma-senha.directive';
 import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina-inicial.component';
+import { ValidaMesmaSenhaModule } from './diretivas/valida-senha/valida-mesma-senha.module';
 
 @NgModule({
   declarations: [
@@ -27,14 +27,14 @@ import { PaginaInicialComponent } from './components/pages/pagina-inicial/pagina
     ValidaCadastroDirective,
     CadastrarComponent,
     TrocarContaComponent,
-    ValidaMesmaSenhaDirective,
     PaginaInicialComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ValidaMesmaSenhaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
