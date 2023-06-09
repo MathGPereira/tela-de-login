@@ -7,14 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class CheckboxComponent {
 
-
     @Input() tabindex!: string;
 
     constructor() {}
 
-    acionaCheck(): boolean {
-        const checkbox = <HTMLInputElement>document.querySelector("[data-check]");
-
-        return checkbox.checked = !checkbox.checked
+    acionaCheck(input: HTMLInputElement): boolean {
+        return input.checked = !input.checked
     }
 }
