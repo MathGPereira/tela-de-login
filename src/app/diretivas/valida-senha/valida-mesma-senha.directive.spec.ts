@@ -3,7 +3,6 @@ import { Component } from "@angular/core";
 
 import { ValidaMesmaSenhaDirective } from "./valida-mesma-senha.directive";
 import { ValidaMesmaSenhaModule } from "./valida-mesma-senha.module";
-import { AbstractControl, NgControlStatus, ValidationErrors } from "@angular/forms";
 
 describe(ValidaMesmaSenhaDirective.name, () => {
     let fixture!: ComponentFixture<TesteDeDiretivaComponent>;

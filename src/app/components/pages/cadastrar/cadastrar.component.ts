@@ -22,7 +22,7 @@ export class CadastrarComponent {
         private route: Router
     ) {}
 
-    validaCadastro(form: NgForm): void {
+    public validaCadastro(form: NgForm): void {
         if(form.valid) {
             const nome = <HTMLInputElement>document.querySelector("[data-nome]");
             const sobrenome = <HTMLInputElement>document.querySelector("[data-sobrenome]");
