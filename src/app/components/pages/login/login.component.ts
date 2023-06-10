@@ -51,6 +51,7 @@ export class LoginComponent {
     }
 
     public getAutenticado() {
+
         return this.autenticado;
     }
 }
