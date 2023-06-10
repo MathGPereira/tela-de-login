@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { ConectaApiService } from 'src/app/servidor/servicos/conecta-api.service';
 import { NgForm } from '@angular/forms';
-import { Login } from 'src/app/interface/login';
 import { Router } from '@angular/router';
+
+import { ConectaApiService } from 'src/app/servidor/servicos/conecta-api.service';
+import { Login } from 'src/app/interface/login';
 import { Erro } from 'src/app/interface/erro';
 
 @Component({
@@ -12,6 +13,7 @@ import { Erro } from 'src/app/interface/erro';
 })
 export class LoginComponent {
 
+    autenticado!: boolean;
     erro: Erro = {
         status: false,
         mensagem: ""
@@ -38,10 +40,17 @@ export class LoginComponent {
 
                     email.value = "";
                     senha.value = "";
+
+                    this.autenticado = false;
                 }else {
+                    this.autenticado = true;
                     this.route.navigate(["paginaInicial"]);
                 }
             });
         }
+    }
+
+    public getAutenticado() {
+        return this.autenticado;
     }
 }

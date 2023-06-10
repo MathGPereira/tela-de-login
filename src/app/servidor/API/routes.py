@@ -11,9 +11,9 @@ def verifica_email_cadastrado():
 
     with app.app_context():
         if Usuario.query.filter_by(email=email).first():
-            return "{'status': True}"
+            return {'status': True}
 
-    return "{'status': False}"
+    return {'status': False}
 
 
 @app.route("/api/validaLogin", methods=["POST"])
@@ -27,7 +27,7 @@ def valida_login():
                 return {'status': True}
         except:
             return {'status': False}
-
+    return {'status': False}
 
 @app.route("/api/cadastrar", methods=["POST"])
 def cadastra_usuario():
